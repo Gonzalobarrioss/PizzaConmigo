@@ -1,0 +1,267 @@
+/* POPUP */
+
+.overlay {
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay.active{
+    visibility: visible;
+}
+
+
+
+/* al terminar poner opacity en 0 */
+.popup {
+    background: #f8f8f8;
+    box-shadow: 0px, 0px, 5px, 0px rgba(0, 0, 0, 1);
+    border-radius: 3px;
+    font-family: 'Monserrat', sans-serif;
+    padding: 20px;
+    text-align: center;
+    width: 700px;
+    height: 80%;
+    opacity: 0;
+    transition: .3s ease all;
+    transform: scale(0.7);
+    overflow: auto;
+}
+
+.popup .btn-cerrar-popup{
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color: #BBBBBB;
+    transition: .3s ease all;
+    overflow: auto;
+}
+
+.popup .btn-cerrar-popup:hover{
+    color: black;
+}
+/* al terminar poner opacity en 0 */
+.popup h3{
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+     opacity: 0;
+}
+
+.popup h4{
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 40px;
+     opacity: 0;
+}
+
+.popup form .contenedor-inputs{
+    opacity: 0;
+}
+
+.popup form .contenedor-inputs input{
+    /*width: 100%; */
+    /*margin-bottom: 20px; */
+    /*height: 52px;*/
+    /*line-height: 52px;*/
+    /*font-size: 18px;*/
+    text-align: center;
+    border: 1px solid #BBBBBB;
+}
+
+.popup form .btn-submit{
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    color: #fff;
+    background: #5E7DE3;
+    border-radius: 3px;
+    font-family: 'Monserrat', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.popup form .btn-submit:hover{
+    background: rgba(94, 125, 227, .9);
+}
+
+.popup.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.popup.active h3 {
+    animation: entradaTitulo .8s ease .5s forwards;
+}
+
+.popup.active h4 {
+    animation: entradaSubTitulo .8s ease .5s forwards;
+}
+
+.popup.active .contenedor-inputs {
+    animation: entradaInputs 1s ease 1s forwards;
+
+}
+
+@keyframes entradaTitulo {
+    from {
+        transform: translatey(-25px);
+        opacity: 0;
+    }
+    to{
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
+
+@keyframes entradaSubTitulo {
+    from {
+        transform: translatey(25px);
+        opacity: 0;
+    }
+    to{
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
+
+@keyframes entradaInputs{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* POPUP DE ALTAS */
+/* POPUP */
+/*
+.overlayAlta {
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlayAlta.active{
+    visibility: visible;
+}
+
+
+
+.popupAlta {
+    background: #f8f8f8;
+    box-shadow: 0px, 0px, 5px, 0px rgba(0, 0, 0, 1);
+    border-radius: 3px;
+    font-family: 'Monserrat', sans-serif;
+    padding: 20px;
+    text-align: center;
+    width: 600px;
+    opacity: 0;
+    transition: .3s ease all;
+    transform: scale(0.7);
+}
+
+.popupAlta .btn-cerrar-popup{
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color: #BBBBBB;
+    transition: .3s ease all;
+}
+
+.popupAlta .btn-cerrar-popup:hover{
+    color: black;
+}
+
+.popupAlta h3{
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+     opacity: 0;
+}
+
+.popupAlta h4{
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 40px;
+     opacity: 0;
+}
+
+.popup .contenedor-datos{
+    opacity: 0;
+}
+
+.popup .contenedor-datos input{
+
+    text-align: center;
+    border: 1px solid #BBBBBB;
+}
+
+
+.popupAlta.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.popupAlta.active h3 {
+    animation: entradaTitulo .8s ease .5s forwards;
+}
+
+.popupAlta.active h4 {
+    animation: entradaSubTitulo .8s ease .5s forwards;
+}
+
+.popupAlta.active .contenedor-datos {
+    animation: entradaDatos 1s ease 1s forwards;
+
+}
+
+@keyframes entradaTitulo {
+    from {
+        transform: translatey(-25px);
+        opacity: 0;
+    }
+    to{
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
+
+@keyframes entradaSubTitulo {
+    from {
+        transform: translatey(25px);
+        opacity: 0;
+    }
+    to{
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
+
+@keyframes entradaDatos{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}*/
